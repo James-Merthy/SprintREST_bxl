@@ -24,6 +24,11 @@ public class DemoController {
         return new Enfant("alex", "kim", LocalDate.now(), true);
     }
 
+    @GetMapping("/personne2")
+    public ResponseEntity<Personne> getPersonWithRE() {
+        return ResponseEntity.status(HttpStatus.I_AM_A_TEAPOT).body(new Enfant("alex", "kim", LocalDate.now(), true));
+    }
+
     // POST - http://localhost:8080/personne
     @PostMapping("/personne")
     public void writePerson(@RequestBody Personne personne, @RequestParam("repetition") int iter){

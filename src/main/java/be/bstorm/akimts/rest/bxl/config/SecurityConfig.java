@@ -63,6 +63,7 @@ public class SecurityConfig/* extends WebSecurityConfigurerAdapter  (deprecié d
         // A ecrire du plus spécifique au plus général
         http.authorizeRequests()
                 // region demo security
+                .antMatchers("/h2-console/**").permitAll()
                 .antMatchers("/security/test/all").permitAll()
                 .antMatchers("/security/test/nobody").denyAll()
                 .antMatchers("/security/test/connected").authenticated()
