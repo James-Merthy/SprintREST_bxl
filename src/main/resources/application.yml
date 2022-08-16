@@ -2,20 +2,24 @@ server:
   port: 8080
 
 spring:
+#   datasource:
+#     url: jdbc:h2:mem:garderie_db
+#     username: sa
+#     password: 1234
+#     driver-class-name: org.h2.Driver
+#   security:
+#     user:
+#       name: user
+#       password: pass
+#       roles: USER
+#   h2:
+#     console:
+#       enabled: true
   datasource:
-    url: jdbc:h2:mem:garderie_db
-    username: sa
-    password: 1234
-    driver-class-name: org.h2.Driver
-  security:
-    user:
-      name: user
-      password: pass
-      roles: USER
-  h2:
-    console:
-      enabled: true
-
+    url: jdbc:postgresql://localhost:5432/garderie_db
+    username: postgres
+    password: pass
+    driver-class-name: org.postgresql.Driver
   jpa:
     show-sql: true
     hibernate:
