@@ -2,6 +2,7 @@ package be.bstorm.akimts.rest.bxl.controller;
 
 import be.bstorm.akimts.rest.bxl.model.entities.Enfant;
 import be.bstorm.akimts.rest.bxl.model.entities.Personne;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -63,6 +63,7 @@ public class SecurityConfig/* extends WebSecurityConfigurerAdapter  (deprecié d
         // A ecrire du plus spécifique au plus général
         http.authorizeRequests()
                 // region demo security
+                .antMatchers("/swagger-ui/**").permitAll()
                 .antMatchers("/h2-console/**").permitAll()
                 .antMatchers("/security/test/all").permitAll()
                 .antMatchers("/security/test/nobody").denyAll()
@@ -83,7 +84,8 @@ public class SecurityConfig/* extends WebSecurityConfigurerAdapter  (deprecié d
                 .antMatchers("/reserv/check").permitAll()
                 .antMatchers(HttpMethod.DELETE).hasRole("ADMIN")
                 .antMatchers("/user/**").permitAll()
-                .anyRequest().authenticated();
+                .anyRequest().permitAll()
+                .and().headers().frameOptions().disable();
 
         return http.build();
 
